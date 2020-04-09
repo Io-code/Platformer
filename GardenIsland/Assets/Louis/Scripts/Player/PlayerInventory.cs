@@ -14,7 +14,8 @@ public class PlayerInventory : MonoBehaviour
     public int waterStock = 0;
 
     public int fertilizerStock = 0;
-    public int fertilizerMax = 0;  
+    public int fertilizerMax = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +39,7 @@ public class PlayerInventory : MonoBehaviour
 
         for (int i = 0; i < medicFlower.Length; i++)
         {
-            if (medicFlower[i])
+            if (medicFlower[i] && (currentPetal[i] < maxPetal[i]))
             {
                 // petal priority
                 weakFlower = (currentPetal[weakFlower] > currentPetal[i]) ? i : weakFlower;
@@ -48,7 +49,8 @@ public class PlayerInventory : MonoBehaviour
                     (waterCycle[weakFlower] >= waterCycle[i])) ? i : weakFlower;
             }
         }
-        currentPetal[weakFlower] += petal;
+        if(currentPetal[weakFlower] < maxPetal[weakFlower])
+            currentPetal[weakFlower] += petal;
     }
 
     public void FlowerHydratation()
@@ -70,6 +72,6 @@ public class PlayerInventory : MonoBehaviour
         else
             currentPetal[flower] -= 1;
 
-        flowerHydratation[flower] = false;
+        flowerHydratation[flower] = true;
     }
 }
