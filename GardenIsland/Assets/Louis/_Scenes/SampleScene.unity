@@ -372,13 +372,13 @@ MonoBehaviour:
   groundMoveSpeed: 10
   jumpHeight: 6
   timeToJumpApex: 0.3
-  timeToJumpFall: 0.7
+  timeToJumpFall: 0.6
   ghostJumpBuffer: 0.1
   accelerationAirborneModifieur: 0.9
   airMoveSpeed: 12
   wallSlideSpeedMax: 5
-  gilderMoveSpeed: 10
-  gilderVelocityY: 3
+  gilderMoveSpeed: 8
+  gilderVelocityY: 2
   gilderYdeceleration: 0.1
   stickyBuffer: 1
   stickable: 0
